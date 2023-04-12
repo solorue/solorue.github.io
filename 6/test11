@@ -1,0 +1,9 @@
+<!doctype html> <!-- djucampus.html -->
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>대전대학교 캠퍼스 맵</title>
+<img src="../images/tourmap03.png"border=0 usemap="#area">
+</body>
+</html>
