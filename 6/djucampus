@@ -11,6 +11,8 @@
 <map name="area">
    <area alt='남문' coords='9,247,98,272' href="southgate.html">
     <area shape="default" noref>
+     <area alt='서문' coords='769,41,852,69' href="westgate.html">
+    <area shape="default" noref>
 </map>
 </body>
 </html>
