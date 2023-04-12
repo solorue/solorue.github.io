@@ -8,12 +8,5 @@
 <body>
 <b>대전대학교 캠퍼스 맵</b><br/>
 <img src="../images/tourmap03.png"border=0 usemap="#area">
-<map name="area">
-   <area alt='남문' shape="rect" target="_blank" coords='9,247,98,272' href="southgate.html">
-    <area shape="default" noref>
-     <area alt='서문' target="_blank" coords='769,41,852,69' href="westgate.html">
-    <area shape="default" noref>
-    
-</map>
 </body>
 </html>
