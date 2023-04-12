@@ -10,6 +10,7 @@
 <img src="../images/tour_map03.png"border=0 usemap="#area">
 <map name="area">
    <area alt='남문' coords='9,247,98,272' href="southgate.html">
+    <area shape="default" noref>
 </map>
 </body>
 </html>
