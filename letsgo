@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		.hide-selection {
+			user-select: none;
+		}
+	</style>
+</head>
+<body>
+	<p class="hide-selection">이 텍스트는 드래그를 했을 때만 보입니다.</p>
+	<p>이 텍스트는 항상 보입니다.</p>
+</body>
+</html>
