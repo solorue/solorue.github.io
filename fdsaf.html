@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>드래그 시 보이게 하는 예제</title>
+	<style>
+		#drag-element {
+			position: absolute;
+			top: 50px;
+			left: 50px;
+			background-color: #ddd;
+			padding: 10px;
+			cursor: move;
+		}
+		.hidden {
+			display: none;
+		}
+	</style>
+	<script>
+		// 드래그 가능한 요소를 선택합니다.
+		var dragElement = document.getElementById("drag-element");
+
+		// 드래그 이벤트를 설정합니다.
+		dragElement.addEventListener("dragstart", function(event) {
+			// 드래그를 시작할 때 요소 내용을 보이도록 합니다.
+			event.target.classList.remove("hidden");
+			// 드래그를 시작할 때 요소를 불투명하게 만듭니다.
+			event.target.style.opacity = "0.5";
+		});
+
+		// 드래그 종료 이벤트를 설정합니다.
+		dragElement.addEventListener("dragend", function(event) {
+			// 드래그가 끝나면 요소를 투명하게 만들고, 내용을 다시 숨깁니다.
+			event.target.style.opacity = "";
+			event.target.classList.add("hidden");
+		});
+	</script>
+</head>
+<body>
+	<!-- 드래그 가능한 요소를 추가합니다. -->
+	<div id="drag-element" class="hidden" draggable="true">드래그해보세요!</div>
+	<!-- 다른 내용을 추가합니다. -->
+	<p>이 문장 사이에는 아무 내용이 없습니다.</p>
+</body>
+</html>
