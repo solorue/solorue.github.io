@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>검색 페이지</title>
+    <style>
+        * {padding:0;margin:0;}
+
+        .sidebar-background {
+     
+    width: 300px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    transition: all .35s;
+    overflow: auto; /* 내용이 넘칠 경우 스크롤 생성 */
+    border: 1px solid #ccc; /* 가시성을 위한 테두리 추가 */
+
+    background: #f5f5f5; /* 배경색을 원하는 색으로 설정하세요 */
+}
+         .center-text {
+      text-align: center;
+      padding: 20px; /* 텍스트 주변에 여백을 주어서 가장자리 색상을 만듦 */
+      margin:20px 240px 0px 240px; /* 좌우 여백을 추가 */
+        
+    }
+        .restaurant-photo {
+       width: 400px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin: 0 auto;
+        
+    }
+       
+        
+        /* 지도 스타일 */
+       #map {
+            width: 100vw;
+            height: 100vh;
+            position: fixed; 
+        }
+        
+.green {
+	box-shadow: 0px 10px 14px -7px #3e7327;
+	background:linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
+	background-color:#77b55a;
+	border-radius:4px;
+	border:1px solid #4b8f29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:6px 12px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #5b8a3c;
+}
+.green:hover {
+	background:linear-gradient(to bottom, #72b352 5%, #77b55a 100%);
+	background-color:#72b352;
+}
+.green:active {
+	position:relative;
+	top:1px;
+}
+        
+.yellow {
+	box-shadow:inset 0px 1px 0px 0px #fff6af;
+	background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+	background-color:#ffec64;
+	border-radius:6px;
+	border:1px solid #ffaa22;
+	display:inline-block;
+	cursor:pointer;
+	color:#333333;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffee66;
+}
+.yellow:hover {
+	background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+	background-color:#ffab23;
+}
+.yellow:active {
+	position:relative;
+	top:1px;
+}
+
+        /* 사이드바 배경색 클래스 */
+.sidebar-background {
+     
+    width: 300px;
+    height: 100%;
+    position: fixed;
+    top: 200;
+    right: 0px;
+    z-index: 2;
+    transition: all .35s;
+
+    background: #f5f5f5; /* 배경색을 원하는 색으로 설정하세요 */
+}
+
+/* 사이드바 스타일 */
+.sidebar {
+    width: 300px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    z-index: 3;
+    transition: all .35s;
+}
+        .spacer {
+        margin-bottom: 50px; /* 아래쪽으로 20px 공백 추가 */
+    }
+         .scrollable-div {
+       width: 300px; /* 너비 조정 */
+        height: 800px; /* 높이 조정 */
+        overflow: auto; /* 내용이 넘칠 경우 스크롤 생성 */
+         /* 가시성을 위한 테두리 추가 */
+    }
+        .restaurant-photo {
+       width: 285px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin: 0 auto;
+        
+    }
+    </style>
+</head>
+<body>
+    <!-- 네비게이션 바 -->
+    <input type="checkbox" id="menuicon">
+    <ul>
+        <li>
+            <label for="menuicon">
+                <span></span><span></span><span></span>
+            </label>
+        </li>
+
+    </ul>
+    <!-- 사이드바 -->
+     
+    <div class="sidebar-background">
+        <!-- 사이드바 내용 -->
+        
+        <div class="scrollable-div">
+    <!-- 스크롤이 가능한 내용 -->
+    <!-- 여러 줄의 텍스트 또는 다른 콘텐츠 -->
+
+  <img class="restaurant-photo" src="https://solorue.github.io/images/%EA%B0%80%EA%B0%80%EC%86%8C.jpg" alt="식당 사진 1">
+  <a href="https://solorue.github.io/DB%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/coffeegagaso.html " class="blue-link">커피가가소</a>
+        <p class="gray-text">디저트</p>
+        <a href="#" class="yellow"># 평점 80점 이상</a>
+        <a href="#" class="green"># 디저트 카페</a>
+         <a href="#" class="green">#가성비</a>
+         <a href="#" class="green">#주차장</a>
+         <a href="#" class="green"># 1층</a>
+        
+        <div class="spacer"></div>
+        <img class="restaurant-photo" src="https://solorue.github.io/images/%EC%97%84%EB%A7%88%EC%9D%98%EB%B0%A5%EC%83%81.jpg" alt="식당 사진 1">
+    <a href="https://solorue.github.io/DB%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/mommytable.html " class="blue-link">엄마의 밥상</a>
+            <p class="gray-text">한식</p>
+        <a href="#" class="yellow"># 평점 80점 이상</a>
+        <a href="#" class="green"># 키오스크</a>
+         <a href="#" class="green">#셀프바</a>
+         <a href="#" class="green">#주차장</a>
+         <a href="#" class="green"># 2층</a>
+        <a href="#" class="green"># 화장실 분리</a>
+         <a href="#" class="green">#만원 이하 메뉴</a>
+         <a href="#" class="green">#주차장</a>
+        
+        <div class="spacer"></div>
+          <img class="restaurant-photo" src="https://solorue.github.io/images/%EB%88%84%EB%82%98%EB%8F%88%EA%B0%80%EC%8A%A4.jpg" alt="식당 사진 1">
+    <a href="https://solorue.github.io/DB%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/NunadonGas.html " class="blue-link">누나돈가스</a>
+            <p class="gray-text">일식</p>
+        <a href="#" class="green"># 주차장</a>
+         <a href="#" class="green">#1층</a>
+         <a href="#" class="green">#대기석</a>
+        <a href="#" class="green"># 화장실 분리</a>
+         <a href="#" class="green">#셀프 서비스</a>        
+        <a href="#" class="green"># 화장실 분리</a>
+         <a href="#" class="green">#셀프 서비스</a>
+        </div>
+    </div>
+    <!-- 네이버 지도 -->
+    <div id="map"></div>
+
+    <!-- 네이버 지도 API 스크립트 -->
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=mdxt6ub77a"></script>
+    <script>
+        function initMap() {
+            var mapOptions = {
+                center: new naver.maps.LatLng(36.3351, 127.4574), // 지도 초기 중심 좌표 (대전대학교를 중심으로 설정)
+                zoom: 17
+            };
+
+            var map = new naver.maps.Map('map', mapOptions);
+        }
+
+        window.onload = initMap;
+    </script>
+</body>
+</html>
