@@ -1,0 +1,206 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>누나돈가스</title>
+    
+    <style>
+    #map {
+            width: 100vw;
+            height: 100vh;
+            position: fixed; 
+        }
+        .sidebar-background {
+     
+    width: 300px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 00px;
+    z-index: 2;
+    transition: all .35s;
+    overflow: auto; /* 내용이 넘칠 경우 스크롤 생성 */
+    border: 1px solid #ccc; /* 가시성을 위한 테두리 추가 */
+
+    background: #f5f5f5; /* 배경색을 원하는 색으로 설정하세요 */
+}
+    /*사진 크기 조절 */
+        .restaurant-photo {
+       width: 280px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin: 0 10px ;
+        
+    }
+        /* */
+        .left-text {
+      
+      text-align: left;
+      padding: 20px; /* 텍스트 주변에 여백을 주어서 가장자리 색상을 만듦 */
+       margin:20px  0px ; ; /* 좌우 여백을 추가 */
+           /*고정크기*/
+      position: relative; /* 포지션 설정 */
+      overflow: hidden; /* 넘치는 부분 숨기기 */   
+            border-bottom: 12px solid white;
+            border-top: 12px solid white;
+    }
+        /*상세정보가 border가 말을 안 들어서 상세정보만 위아래로 하고 나머지는 bottom만!*/
+        .left-text2 {
+      
+      text-align: left;
+      padding: 20px; /* 텍스트 주변에 여백을 주어서 가장자리 색상을 만듦 */
+       margin:20px  0px ; ; /* 좌우 여백을 추가 */
+           /*고정크기*/
+      position: relative; /* 포지션 설정 */
+      overflow: hidden; /* 넘치는 부분 숨기기 */   
+            border-bottom: 12px solid white;
+    
+    }
+        .border-bottom-please
+        {
+            border-bottom: 12px solid white;
+        }
+        /*메뉴 사진 크기*/
+        .menu-photo {
+       width: 220px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin: 15px 15px 5px 15px;
+        
+    }
+        .border-color {
+            border-width : 20px, 10px 10px 30px; (위, 우, 아래, 좌)
+        }
+        .vi{
+		border-radius: 5px;
+		background-color: #2e5b86;
+		border-style: solid;
+	    border-color: #5d5d5d;
+	    border-width: 1px;
+	    color: #FFFFFF;
+		padding:15px
+	}
+	.top { margin-top: 30px; }
+        
+        .green {
+	box-shadow: 0px 10px 14px -7px #3e7327;
+	background:linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
+	background-color:#77b55a;
+	border-radius:4px;
+	border:1px solid #4b8f29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:6px 12px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #5b8a3c;
+}
+.green:hover {
+	background:linear-gradient(to bottom, #72b352 5%, #77b55a 100%);
+	background-color:#72b352;
+}
+.green:active {
+	position:relative;
+	top:1px;
+}
+        
+.yellow {
+	box-shadow:inset 0px 1px 0px 0px #fff6af;
+	background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+	background-color:#ffec64;
+	border-radius:6px;
+	border:1px solid #ffaa22;
+	display:inline-block;
+	cursor:pointer;
+	color:#333333;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffee66;
+}
+.yellow:hover {
+	background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+	background-color:#ffab23;
+}
+.yellow:active {
+	position:relative;
+	top:1px;
+}
+    </style>
+    
+    
+    </head>
+    
+    <body>
+        
+        <div id="map"></div>
+
+    <!-- 네이버 지도 API 스크립트 -->
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=mdxt6ub77a"></script>
+    <script>
+        function initMap() {
+            var mapOptions = {
+                center: new naver.maps.LatLng(36.3351, 127.4574), // 지도 초기 중심 좌표 (대전대학교를 중심으로 설정)
+                zoom: 17
+            };
+
+            var map = new naver.maps.Map('map', mapOptions);
+        }
+
+        window.onload = initMap;
+    </script>
+        <div class=sidebar-background>
+            <div id="left-text" style="background-color: #f5f5f5;">
+  <img class="restaurant-photo" src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20190215_104%2F1550199768035K9xnt_JPEG%2FXlAA7IAxads2RbYv2NpDtIv4.jpg" alt="식당 사진 1">
+  <h1>누나돈가스</h1>
+                <p class="gray-text">일식</p>
+          <a href="#" class="green"># 주차장</a>
+         <a href="#" class="green">#1층</a>
+         <a href="#" class="green">#대기석</a>
+        <a href="#" class="green"># 화장실 분리</a>
+         <a href="#" class="green">#셀프 서비스</a>       
+        
+                
+      </div>
+        <div class="left-text" style="background-color: #f5f5f5;">
+       <h2>상세정보</h2>
+   <p>대전 동구 대학로 68 2층 (우)34519</p>
+    <p>지번 | 용운동 576</p>    
+    <p>042-321-3332 대표번호</p>
+      
+</div>
+        <div class="left-text2" style="background-color: #f5f5f5;">
+             <h2>메뉴</h2>  
+       <img class="menu-photo" src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230602_105%2F16856853972233mY9N_JPEG%2F20230531_210018.jpg" alt="누나돈가스 메뉴"> 
+        <p style="line-height: 2;">누나돈가스  </p><hr class="light-hr">
+        <p style="line-height: 2;">오빠돈가스 </p><hr class="light-hr">
+        <p style="line-height: 2;">카레돈가스 </p><hr class="light-hr">
+        <p style="line-height: 2;">치즈돈가스 </p><hr class="light-hr">
+        <p style="line-height: 2;">눈꽃메밀&돈가스세트</p><hr class="light-hr">
+        <p style="line-height: 2.3;">언니우동</p><hr class="light-hr">
+    </div>
+        
+            <div class="left-text2" style="background-color:#f5f5f5;">
+    <h1>사진</h1>
+        <img class="menu-photo" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzExMDlfMjA3%2FMDAxNjk5NTM5ODY5NjE0.K_BqFpOj_MMT4MUNTv59wupmQJ-MYHcAzQBsDWBA1JQg.wdGp-cupAN0kHolCyZPAO1ysHxDFwvOtUa4d78m2ZO8g.JPEG.salbi0718%2F002.jpg" alt="오렌지 에이드"> 
+        <img class="menu-photo" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzExMDlfMTIz%2FMDAxNjk5NTM5ODY5Njgz.0qkpOMtRJubgcJb91MDD1Goq7j4YoYwUddhx-3DHJ7cg.Yj3ZBQgYkocVpNRDV38sxt1FQ909BnkVapRJBebxTUkg.JPEG.salbi0718%2F005.jpg" al t="아메리카노"> 
+        <img class="menu-photo" src="https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzExMjNfMzAg%2FMDAxNzAwNjk5MTM3ODk3.ElluyiW-2epvvFaBR5qkL-3SwA50ExKf-9kYAE7sI8sg.B14Lnb1jjydehFktjwHel5sakxKUjRwhOIKe0jVTJ4og.JPEG%2F20231118_131745.jpg.jpg" alt="청포도 에이드"> 
+        <img class="menu-photo" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzExMDhfMjA1%2FMDAxNjk5NDMyMjg3NDg0.DKLXfdV3z5_4ECqL1lnVpPguBUU6ti78LGcR13XYSKkg.SAFfoZXXxld2bb-L0TkquB6qw9ingiXSxbJhx6nGcf0g.JPEG.directorzzini%2F%25B4%25EB%25C0%25FC%25B4%25EB%25C7%25D0%25B1%25B3_%25B0%25A1%25BC%25BA%25BA%25F1_%25BE%25E7%25B8%25B9%25C0%25BA_%25BC%25F6%25C1%25A6%25B5%25B7%25B0%25A1%25BD%25BA%25C1%25FD_%25287%2529.jpg" alt="커피가가소 사진"> 
+        <img class="menu-photo" src="https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzEwMzBfMTg2%2FMDAxNjk4NjM3NDE4MjA1.zr892n_RVFwBwajc117_igVynQ2-PTVZyyxDpDT7sowg.TGk5G8Yp3DIHi5nF2D3hjOO_mzLyWGy80RdljUE0QPQg.JPEG%2F20231030_121056.jpg" alt="커피가가소 사진"> 
+        <img class="menu-photo" src="https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzEwMTRfMTI5%2FMDAxNjk3MjY3MTA3NzEw.kR4LSBbcmm_r832q6jXDm3yYBaJFvo10DXNEmL9bLSwg.RrhHvf8j6MNZuyn205vpM2NjkEv0bJtxdFU7HVxUNHkg.JPEG%2F20231014_132501.jpg.jpg" alt="커피가가소 사진"> 
+        
+        
+        </div>
+</div>
+        
+    </body>
+
+
+</html>
