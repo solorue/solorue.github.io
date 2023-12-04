@@ -1,0 +1,208 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>엄마의 밥상</title>
+    
+    <style>
+    #map {
+            width: 100vw;
+            height: 100vh;
+            position: fixed; 
+        }
+        .sidebar-background {
+     
+    width: 300px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 00px;
+    z-index: 2;
+    transition: all .35s;
+    overflow: auto; /* 내용이 넘칠 경우 스크롤 생성 */
+    border: 1px solid #ccc; /* 가시성을 위한 테두리 추가 */
+
+    background: #f5f5f5; /* 배경색을 원하는 색으로 설정하세요 */
+}
+    /*사진 크기 조절 */
+        .restaurant-photo {
+       width: 280px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin: 0 10px ;
+        
+    }
+        /* */
+        .left-text {
+      
+      text-align: left;
+      padding: 20px; /* 텍스트 주변에 여백을 주어서 가장자리 색상을 만듦 */
+       margin:20px  0px ; ; /* 좌우 여백을 추가 */
+           /*고정크기*/
+      position: relative; /* 포지션 설정 */
+      overflow: hidden; /* 넘치는 부분 숨기기 */   
+            border-bottom: 12px solid white;
+            border-top: 12px solid white;
+    }
+        /*상세정보가 border가 말을 안 들어서 상세정보만 위아래로 하고 나머지는 bottom만!*/
+        .left-text2 {
+      
+      text-align: left;
+      padding: 20px; /* 텍스트 주변에 여백을 주어서 가장자리 색상을 만듦 */
+       margin:20px  0px ; ; /* 좌우 여백을 추가 */
+           /*고정크기*/
+      position: relative; /* 포지션 설정 */
+      overflow: hidden; /* 넘치는 부분 숨기기 */   
+            border-bottom: 12px solid white;
+    
+    }
+        .border-bottom-please
+        {
+            border-bottom: 12px solid white;
+        }
+        /*메뉴 사진 크기*/
+        .menu-photo {
+       width: 220px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin: 15px 15px 5px 15px;
+        
+    }
+        .border-color {
+            border-width : 20px, 10px 10px 30px; (위, 우, 아래, 좌)
+        }
+        .vi{
+		border-radius: 5px;
+		background-color: #2e5b86;
+		border-style: solid;
+	    border-color: #5d5d5d;
+	    border-width: 1px;
+	    color: #FFFFFF;
+		padding:15px
+	}
+	.top { margin-top: 30px; }
+        
+        .green {
+	box-shadow: 0px 10px 14px -7px #3e7327;
+	background:linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
+	background-color:#77b55a;
+	border-radius:4px;
+	border:1px solid #4b8f29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:6px 12px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #5b8a3c;
+}
+.green:hover {
+	background:linear-gradient(to bottom, #72b352 5%, #77b55a 100%);
+	background-color:#72b352;
+}
+.green:active {
+	position:relative;
+	top:1px;
+}
+        
+.yellow {
+	box-shadow:inset 0px 1px 0px 0px #fff6af;
+	background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+	background-color:#ffec64;
+	border-radius:6px;
+	border:1px solid #ffaa22;
+	display:inline-block;
+	cursor:pointer;
+	color:#333333;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffee66;
+}
+.yellow:hover {
+	background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+	background-color:#ffab23;
+}
+.yellow:active {
+	position:relative;
+	top:1px;
+}
+    </style>
+    
+    
+    </head>
+    
+    <body>
+        
+        <div id="map"></div>
+
+    <!-- 네이버 지도 API 스크립트 -->
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=mdxt6ub77a"></script>
+    <script>
+        function initMap() {
+            var mapOptions = {
+                center: new naver.maps.LatLng(36.3351, 127.4574), // 지도 초기 중심 좌표 (대전대학교를 중심으로 설정)
+                zoom: 17
+            };
+
+            var map = new naver.maps.Map('map', mapOptions);
+        }
+
+        window.onload = initMap;
+    </script>
+        <div class=sidebar-background>
+            <div id="left-text" style="background-color: #f5f5f5;">
+  <img class="restaurant-photo" src="https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjEyMjZfMjIx%2FMDAxNjcyMDMwNzU3Nzk3.WUquxudiF8piNNJ6QGjtd0rhClonhgeY2PJ1pgHj9sog.2_C-i3cd7txMvUYgKBWCou8CsbQ9fqQLn9zNBy0Zv_8g.JPEG%2F0C41C0D9-CE0D-4DAF-AACE-D0DE170F283E.jpeg" alt="식당 사진 1">
+  <h1>엄마의 밥상</h1>
+          <a href="#" class="yellow"># 평점 80점 이상</a>
+        <a href="#" class="green"># 키오스크</a>
+         <a href="#" class="green">#셀프바</a>
+         <a href="#" class="green">#주차장</a>
+         <a href="#" class="green"># 2층</a>
+        <a href="#" class="green"># 화장실 분리</a>
+         <a href="#" class="green">#만원 이하 메뉴</a>
+         <a href="#" class="green">#주차장</a>
+        <p class="gray-text">한식</p>
+                
+      </div>
+        <div class="left-text" style="background-color: #f5f5f5;">
+       <h2>상세정보</h2>
+   <p>대전 동구 대학로 68 2층 (우)34519</p>
+    <p>지번 | 용운동 576</p>    
+    <p>042-321-3332 대표번호</p>
+      
+</div>
+        <div class="left-text2" style="background-color: #f5f5f5;">
+             <h2>메뉴</h2>  
+       <img class="menu-photo" src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220207_140%2F1644208218420Ycb6L_JPEG%2Fimage.jpg" alt="엄마의 밥상 메뉴"> 
+        <p style="line-height: 2;">뚝배기불고기  </p><hr class="light-hr">
+        <p style="line-height: 2;">뚝배기제육 </p><hr class="light-hr">
+        <p style="line-height: 2;">육회비빔밥 </p><hr class="light-hr">
+        <p style="line-height: 2;">뚝배기닭갈비 </p><hr class="light-hr">
+        <p style="line-height: 2;">부대찌개</p><hr class="light-hr">
+        <p style="line-height: 2.3;">김치찌개</p><hr class="light-hr">
+    </div>
+        
+            <div class="left-text2" style="background-color:#f5f5f5;">
+    <h1>사진</h1>
+        <img class="menu-photo" src="https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzA2MjZfNDYg%2FMDAxNjg3NzEwMTgwNzgx.mZfE3-uMNeq6i-m9qkRgwEjdxrqtaE_otA0aA6--nXog.aYfMFO_Zin0vMAEKdluBCDUKky3P5CaXEIznL6XhOlgg.JPEG%2FF046ED86-1BED-4C7D-955E-22B81F82384E.jpeg" alt="오렌지 에이드"> 
+        <img class="menu-photo" src="https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzA1MTlfMTU2%2FMDAxNjg0NDUzODE4MDIy.zdsZsj_f0cHsZeNVKQsf6XLfwtEE-FHIDWoGInTcN-8g.18xF8pZOx6l42MNtokDNUugOyiN2MWCPbDu1EXah6hYg.JPEG%2F20230518_124719.jpg" al t="아메리카노"> 
+        <img class="menu-photo" src="https://search.pstatic.net/common/?src=https%3A%2F%2Fmyplace-phinf.pstatic.net%2F20210928_258%2F1632821560012yiInh_JPEG%2Fupload_96422f4b7a3f269a68cce11b722da547.jpg" alt="청포도 에이드"> 
+        <img class="menu-photo" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDA3MTJfNSAg%2FMDAxNTk0NTQ4Mzg3MTM4.48mqsR6d7hIMsnlqRRPwvIaQQiDa1to92b5mUyt9c7wg.HLnyKHbVk30ZDEfil62M41J80gYxSU7HY3-s6G2xXTQg.JPEG.milsilsamo%2F20200623_115249.jpg" alt="커피가가소 사진"> 
+        <img class="menu-photo" src="https://search.pstatic.net/common/?src=https%3A%2F%2Fmyplace-phinf.pstatic.net%2F20201211_40%2F16076763856517b6Ww_JPEG%2Fupload_256aa0feefcb50075adc79ac3ac6192a.jpg" alt="커피가가소 사진"> 
+        <img class="menu-photo" src="https://search.pstatic.net/common/?src=https%3A%2F%2Fmyplace-phinf.pstatic.net%2F20201205_99%2F16071482193944HWfU_JPEG%2Fupload_25434b94b27ab21bc4bc2254c274c578.jpg" alt="커피가가소 사진"> 
+        
+        
+        </div>
+</div>
+        
+    </body>
+
+
+</html>
