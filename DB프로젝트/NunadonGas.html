@@ -20,6 +20,7 @@
     right: 00px;
     z-index: 2;
     transition: all .35s;
+    text-align: center;
     overflow: auto; /* 내용이 넘칠 경우 스크롤 생성 */
     border: 1px solid #ccc; /* 가시성을 위한 테두리 추가 */
 
@@ -100,6 +101,8 @@
 	padding:6px 12px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #5b8a3c;
+	margin-right: 10px;
+            margin-top: 10px;
 }
 .green:hover {
 	background:linear-gradient(to bottom, #72b352 5%, #77b55a 100%);
@@ -146,16 +149,26 @@
     <!-- 네이버 지도 API 스크립트 -->
     <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=mdxt6ub77a"></script>
     <script>
-        function initMap() {
-            var mapOptions = {
-                center: new naver.maps.LatLng(36.3351, 127.4574), // 지도 초기 중심 좌표 (대전대학교를 중심으로 설정)
-                zoom: 17
-            };
+       function initMap() {
+      var mapOptions = {
+        center: new naver.maps.LatLng(36.3351, 127.4574),
+        zoom: 17
+      };
 
-            var map = new naver.maps.Map('map', mapOptions);
-        }
+      // 지도 생성
+      var map = new naver.maps.Map('map', mapOptions);
 
-        window.onload = initMap;
+      // 마커의 위치 설정
+      var markerPosition = new naver.maps.LatLng(36.3356, 127.45675);
+
+      // 마커 생성
+      var marker = new naver.maps.Marker({
+        position: markerPosition,
+        map: map // 마커를 지도에 표시
+      });
+    }
+
+    window.onload = initMap;
     </script>
         <div class=sidebar-background>
             <div id="left-text" style="background-color: #f5f5f5;">
